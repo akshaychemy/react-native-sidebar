@@ -6,7 +6,6 @@ export const tabs=[
     {
         id: 3,
         text: "Taches reçues ",
-
         icon:  'assignment' ,
     },
     { id: 4, text: "Profile",  icon:  'person'   },

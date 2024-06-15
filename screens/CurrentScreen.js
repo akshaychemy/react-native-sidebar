@@ -1,6 +1,9 @@
-import { Image, Text, StyleSheet } from "react-native";
+import { Image, Text, StyleSheet, Dimensions } from "react-native";
 import random from "../assets/1122563.jpg";
 import React from "react";
+
+// Get device dimensions
+const { width, height } = Dimensions.get("window");
 
 // CurrentScreen component
 const CurrentScreen = ({ tabTitle }) => {
@@ -24,25 +27,25 @@ const CurrentScreen = ({ tabTitle }) => {
 // Stylesheet to manage styles
 const styles = StyleSheet.create({
   title: {
-    fontSize: 30,
+    fontSize: width * 0.08, // Relative font size
     fontWeight: "bold",
     color: "black",
-    paddingTop: 20,
+    paddingTop: height * 0.03, // Relative padding top
   },
   image: {
     width: "100%",
-    height: 300,
+    height: height * 0.4, // Relative height
     borderRadius: 15,
-    marginTop: 25,
+    marginTop: height * 0.03, // Relative margin top
   },
   subtitle: {
-    fontSize: 20,
+    fontSize: width * 0.05, // Relative font size
     fontWeight: "bold",
-    paddingTop: 15,
-    paddingBottom: 5,
+    paddingTop: height * 0.02, // Relative padding top
+    paddingBottom: height * 0.01, // Relative padding bottom
   },
   bodyText: {
-    fontSize: 16,
+    fontSize: width * 0.04, // Relative font size
     color: "gray",
   },
 });

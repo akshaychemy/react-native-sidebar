@@ -1,8 +1,11 @@
-import { Image, Text, TouchableOpacity, View, StyleSheet } from "react-native";
+import { Image, Text, TouchableOpacity, View, StyleSheet, Dimensions } from "react-native";
 import React from "react";
 
 // Importing profile image
 import profile from "../assets/profile.png";
+
+// Get device dimensions
+const { width, height } = Dimensions.get("window");
 
 // Profile component
 export const Profile = ({ name, profileImage }) => {
@@ -25,23 +28,24 @@ export const Profile = ({ name, profileImage }) => {
 // Stylesheet to manage styles
 const styles = StyleSheet.create({
   container: {
-    marginTop: "15%",
-    marginLeft: "3%",
+    marginTop: height * 0.15, // 15% of screen height
+    marginLeft: width * 0.03, // 3% of screen width
   },
   image: {
-    width: 70,
-    height: 70,
+    width: width * 0.18, // 18% of screen width
+    height: width * 0.18, // Keep aspect ratio square
     borderRadius: 10,
-    marginTop: 8,
+    marginTop: height * 0.01, // 1% of screen height
   },
   name: {
-    fontSize: 20,
+    fontSize: width * 0.05, // 5% of screen width
     fontWeight: "bold",
     color: "white",
-    marginTop: 10,
+    marginTop: height * 0.01, // 1% of screen height
   },
   viewProfileText: {
-    marginTop: 4,
+    marginTop: height * 0.005, // 0.5% of screen height
     color: "white",
+    fontSize: width * 0.04, // 4% of screen width
   },
 });

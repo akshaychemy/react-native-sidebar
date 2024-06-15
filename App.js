@@ -8,6 +8,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Dimensions,
 } from "react-native";
 
 // Importing images for the menu and close button
@@ -22,6 +23,9 @@ import { Profile } from "./components/profile";
 import CurrentScreen from "./screens/CurrentScreen";
 // Importing tabs and logout button configuration
 import { logOutTab, tabs } from "./utils/tabs";
+
+// Get device dimensions
+const { width, height } = Dimensions.get("window");
 
 export default function App() {
   // State to manage the currently selected tab
@@ -128,18 +132,19 @@ const styles = StyleSheet.create({
   },
   menuContainer: {
     justifyContent: "flex-start",
-    padding: 15,
+    padding: width * 0.04, // Relative padding
     backgroundColor: "yellow",
+    width: width * 0.8, // Use 80% of the screen width
   },
   tabsContainer: {
     flexGrow: 1,
-    marginTop: 50,
+    marginTop: height * 0.05, // Relative margin top
     backgroundColor: "grey",
   },
   logoutContainer: {
     backgroundColor: 'red',
     borderRadius: 10,
-    paddingBottom: 5,
+    paddingBottom: height * 0.01, // Relative padding bottom
   },
   overlay: {
     flexGrow: 1,
@@ -149,13 +154,13 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    paddingHorizontal: 15,
-    paddingVertical: 20,
+    paddingHorizontal: width * 0.04, // Relative horizontal padding
+    paddingVertical: height * 0.02, // Relative vertical padding
   },
   menuIcon: {
-    width: 20,
-    height: 20,
+    width: width * 0.05, // Relative width
+    height: height * 0.025, // Relative height
     tintColor: "black",
-    marginTop: 40,
+    marginTop: height * 0.05, // Relative margin top
   },
 });

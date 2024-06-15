@@ -1,6 +1,9 @@
-import { Image, Text, TouchableOpacity, View, StyleSheet } from "react-native";
+import { Image, Text, TouchableOpacity, View, StyleSheet, Dimensions } from "react-native";
 import React from "react";
 import { Icon } from "@rneui/themed";
+
+// Get device dimensions
+const { width, height } = Dimensions.get("window");
 
 // TabButton component
 export const TabButton = ({ currentTab, setCurrentTab, text, icon }) => {
@@ -24,6 +27,7 @@ export const TabButton = ({ currentTab, setCurrentTab, text, icon }) => {
         <Icon
           name={icon}
           color={currentTab == text ? "#5359D1" : "white"}
+          size={width * 0.06} // Relative icon size
         />
 
         {/* Tab text */}
@@ -45,15 +49,15 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: "row",
     alignItems: "center",
-    paddingVertical: 8,
-    paddingLeft: 13,
-    paddingRight: 35,
+    paddingVertical: height * 0.01, // Relative vertical padding
+    paddingLeft: width * 0.03, // Relative left padding
+    paddingRight: width * 0.09, // Relative right padding
     borderRadius: 8,
-    marginTop: 15,
+    marginTop: height * 0.02, // Relative margin top
   },
   buttonText: {
-    fontSize: 15,
+    fontSize: width * 0.04, // Relative font size
     fontWeight: "bold",
-    paddingLeft: 15,
+    paddingLeft: width * 0.04, // Relative left padding
   },
 });
